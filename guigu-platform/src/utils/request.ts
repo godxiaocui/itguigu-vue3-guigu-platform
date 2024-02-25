@@ -1,6 +1,8 @@
 //  对axios进行二次封装
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
+// 引入用户相关的
+import useUserStore from '@/store/modules/user'
 // 第一步利用axios的create方法，创建axios实例
 //创建axios实例
 const request = axios.create({
@@ -10,6 +12,17 @@ const request = axios.create({
 })
 //请求拦截器
 request.interceptors.request.use((config) => {
+  // 获取用户相关的小仓库，获取仓库内部的token
+  const userStore = useUserStore()
+  if (userStore) {
+    //获取用户的token
+    const token = userStore.token
+    //判断token是否存在
+    if (token) {
+      //将token设置到请求头中
+      config.headers.token = token
+    }
+  }
   // config是请求的配置对象，我们可以对config进行统一配置
   // 比如：headers 每次发送请求之前，经常需要在headers中携带token
   // 返回配置对象

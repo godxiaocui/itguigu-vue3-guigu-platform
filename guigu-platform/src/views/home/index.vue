@@ -4,6 +4,15 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from 'vue'
+// 获取仓库
+import useUserStore from '@/store/modules/user'
+let userStore = useUserStore()
+// 获取用户信息
+onMounted(() => {
+  userStore.userInfo()
+})
+</script>
 
 <style scoped lang="scss"></style>

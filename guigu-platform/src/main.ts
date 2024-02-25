@@ -38,6 +38,8 @@ axios({
 // 引入路由
 import router from '@/router/index'
 app.use(router)
+// 引入路由鉴权
+import '@/permission'
 
 // 引入仓库
 import pinia from './store'
