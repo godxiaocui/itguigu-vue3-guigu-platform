@@ -1,6 +1,6 @@
 // 创建用户的小仓库
 import { defineStore } from 'pinia'
-import { reqLogin, reqUserInfo } from '@/api/user'
+import { reqLogin, reqUserInfo,reqLogout } from '@/api/user'
 import type { loginFormData, loginResponseData } from '@/api/user/type'
 import type { UserState } from './types/types'
 import { SET_TOKEN, GET_TOKEN, REMOVE_TOKEN } from '@/utils/tokens'
@@ -22,7 +22,7 @@ export const useUserStore = defineStore({
       const result: loginResponseData = await reqLogin(data)
       // 成功 200- token
       if (result.code === 200) {
-        this.token = (result.data.token as string) || ''
+        this.token = (result.data as string) || ''
         // 保存token到本地
         SET_TOKEN(this.token)
         // 保证返回一个成功的promise，undefine和 null都是成功
@@ -39,15 +39,26 @@ export const useUserStore = defineStore({
       // 获取用户信息成功
       if (result.code === 200) {
         // 保存用户信息
-        this.username = result.data.checkUser.username
-        this.avatar = result.data.checkUser.avatar
+        this.username = result.data.username
+        this.avatar = result.data.avatar
+        return 'ok'
+      }else{
+        return Promise.reject(new Error(result.message))
       }
     },
-    logout() {
-      ;(this.token = ''), (this.avatar = ''), (this.username = '')
-      // 删除token
-      REMOVE_TOKEN()
-    },
+    async logout() {  
+      const result=  await reqLogout()
+      if(result.code === 200){
+        ;(this.token = ''), (this.avatar = ''), (this.username = '')
+        // 删除token
+        REMOVE_TOKEN()
+        return 'ok'
+   
+    }else{
+      return Promise.reject(new Error(result.message))
+    }
+
   },
+}
 })
 export default useUserStore
