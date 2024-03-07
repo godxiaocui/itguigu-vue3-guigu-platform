@@ -5,7 +5,7 @@
                 <!-- change:选中值发生变化时触发 -->
                 <!-- 这里可以双向绑定修改仓库的值-->
                 <!-- 同时收集的数据会双向绑定到el-select   即  el-option :value="item.id" 这里的id会赋值给v-model ategoryStore.c1Id-->
-              <el-select  v-model="categoryStore.c1Id" @change="handler" style="width: 200px; height: 40px;">
+              <el-select  v-model="categoryStore.c1Id" @change="handler" style="width: 200px; height: 40px;" :disabled="scene==1?true:false">
                   <!-- label:即为展示数据 value:即为select下拉菜单收集的数据 -->
                     <el-option
                         v-for="item in categoryStore.c1Arr"
@@ -20,7 +20,7 @@
        
             </el-form-item>
             <el-form-item label="二级分类" >
-                <el-select v-model="categoryStore.c2Id" @change="handler1" style="width: 200px; height: 40px;">
+                <el-select v-model="categoryStore.c2Id" @change="handler1" style="width: 200px; height: 40px;" :disabled="scene==1?true:false">
                     <el-option
                         v-for="item in categoryStore.c2Arr"
                         :key="item.id"
@@ -31,7 +31,7 @@
                 </el-select>
             </el-form-item>
             <el-form-item label="三级分类">
-                <el-select v-model="categoryStore.c3Id" style="width: 200px; height: 40px;">
+                <el-select v-model="categoryStore.c3Id" style="width: 200px; height: 40px;" :disabled="scene==1?true:false">
                     <el-option
                         v-for="item in categoryStore.c3Arr"
                         :key="item.id"
@@ -79,8 +79,8 @@ const handler1 = () => {
 }
 
 
-// //接受父组件传递过来scene
-// defineProps(['scene']);
+// //接受父组件传递过来scene,用来判断选项卡是否禁用
+defineProps(['scene']);
 
 </script>
 

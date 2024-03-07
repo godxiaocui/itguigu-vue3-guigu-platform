@@ -19,18 +19,19 @@ export interface CategoryResponseData extends ResponseData{
 
 // 属性对象的ts类型
 export interface AttrValue{
-    id:number;
+    id?:number;
     valueName:string;
-    attrId:number;
+    attrId?:number;
+    flag?:boolean;
 }
 //属性对象的ts数组类型
 export type AttrValueArr=AttrValue[]
 //  属性对象
 export interface Attr{
-    id:number;
+    id?:number;
     attrName:string;
-    categoryId:number;
-    cateGoryLevel:number;
+    categoryId:number|string;
+    categoryLevel:number;
     attrValueList:AttrValueArr;
 }
 // 存储属性对象的数组
