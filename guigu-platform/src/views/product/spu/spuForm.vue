@@ -11,6 +11,9 @@
     <el-form-item label="spu描述">
       <el-input type="textarea" placeholder="请输入spu描述"></el-input>
     </el-form-item>
+    <el-form-item label="spu图片">
+      <el-input placeholder="请输入spu规格"></el-input>
+    </el-form-item>
   </el-form>
 </template>
 
