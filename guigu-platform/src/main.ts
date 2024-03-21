@@ -23,7 +23,8 @@ app.use(gloablComponent)
 
 //引入模版的全局样式
 import '@/styles/index.scss'
-
+//暗黑模式需要的样式
+import 'element-plus/theme-chalk/dark/css-vars.css'
 // 测试代码，测试假接口
 import axios from 'axios'
 axios({
