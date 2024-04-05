@@ -11,6 +11,12 @@ dependencies:
   axios:
     specifier: ^1.6.7
     version: 1.6.7
+  echarts:
+    specifier: ^5.5.0
+    version: 5.5.0
+  echarts-liquidfill:
+    specifier: ^3.1.0
+    version: 3.1.0(echarts@5.5.0)
   element-plus:
     specifier: ^2.5.5
     version: 2.5.5(vue@3.4.19)
@@ -2297,6 +2303,21 @@ packages:
   /eastasianwidth@0.2.0:
     resolution: {integrity: sha1-aWzi7Aqg5uqTo5f/zySqeEDIJ8s=, tarball: http://registry.npm.release.ctripcorp.com/eastasianwidth/download/eastasianwidth-0.2.0.tgz}
     dev: true
+
+  /echarts-liquidfill@3.1.0(echarts@5.5.0):
+    resolution: {integrity: sha1-TscPNpc4LQQEyV//nz6N2FyDd9o=, tarball: http://registry.npm.release.ctripcorp.com/echarts-liquidfill/download/echarts-liquidfill-3.1.0.tgz}
+    peerDependencies:
+      echarts: ^5.0.1
+    dependencies:
+      echarts: 5.5.0
+    dev: false
+
+  /echarts@5.5.0:
+    resolution: {integrity: sha1-wTlFp/Os3WfBNNiprGfpF4MBE6w=, tarball: http://registry.npm.release.ctripcorp.com/echarts/download/echarts-5.5.0.tgz}
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.5.0
+    dev: false
 
   /ee-first@1.1.1:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=, tarball: http://registry.npm.release.ctripcorp.com/ee-first/download/ee-first-1.1.1.tgz}
@@ -5525,6 +5546,10 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
+  /tslib@2.3.0:
+    resolution: {integrity: sha1-gDuM2rPhK6WBpMpByIObuw2ssJ4=, tarball: http://registry.npm.release.ctripcorp.com/tslib/download/tslib-2.3.0.tgz}
+    dev: false
+
   /tslib@2.6.2:
     resolution: {integrity: sha1-cDrClCXns3zW/UVukkBNRtHz5K4=, tarball: http://registry.npm.release.ctripcorp.com/tslib/download/tslib-2.6.2.tgz}
     dev: true
@@ -5953,3 +5978,9 @@ packages:
     resolution: {integrity: sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=, tarball: http://registry.npm.release.ctripcorp.com/yocto-queue/download/yocto-queue-0.1.0.tgz}
     engines: {node: '>=10'}
     dev: true
+
+  /zrender@5.5.0:
+    resolution: {integrity: sha1-VNDWxO2oGpbZ9gqc103EjqAmvB4=, tarball: http://registry.npm.release.ctripcorp.com/zrender/download/zrender-5.5.0.tgz}
+    dependencies:
+      tslib: 2.3.0
+    dev: false
