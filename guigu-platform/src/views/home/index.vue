@@ -7,6 +7,7 @@
         <p class="subtitle">硅谷甄选运营平台</p>
       </div>
     </div>
+    
   </el-card>
   <div class="bottoms">
     <svg-icon name="welcome" width="600px" height="300px"></svg-icon>

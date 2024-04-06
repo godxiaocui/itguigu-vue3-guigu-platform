@@ -24,6 +24,7 @@
           @click="updatePermisstion(row)"
           size="small"
           :disabled="row.level == 1 ? true : false"
+          v-has="`btn.trademark.add`"
         >
           编辑
         </el-button>
