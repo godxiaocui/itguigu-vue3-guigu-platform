@@ -45,7 +45,9 @@ import '@/permission'
 // 引入仓库
 import pinia from './store'
 app.use(pinia)
-
+// 引入自定义指令文件
+import { isHasButton } from './directive/has'
+isHasButton(app)
 // 获取开发环境的变量
 console.log(import.meta.env)
 app.mount('#app')

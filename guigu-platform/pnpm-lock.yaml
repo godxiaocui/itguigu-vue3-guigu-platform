@@ -23,6 +23,9 @@ dependencies:
   install:
     specifier: ^0.13.0
     version: 0.13.0
+  loadash:
+    specifier: ^1.0.0
+    version: 1.0.0
   moment:
     specifier: ^2.30.1
     version: 2.30.1
@@ -3826,6 +3829,11 @@ packages:
   /lines-and-columns@1.2.4:
     resolution: {integrity: sha1-7KKE910pZQeTCdwK2SVauy68FjI=, tarball: http://registry.npm.release.ctripcorp.com/lines-and-columns/download/lines-and-columns-1.2.4.tgz}
     dev: true
+
+  /loadash@1.0.0:
+    resolution: {integrity: sha1-uS5U2AnzwiX0+anPuurltW3hyp8=, tarball: http://registry.npm.release.ctripcorp.com/loadash/download/loadash-1.0.0.tgz}
+    deprecated: Package is unsupport. Please use the lodash package instead.
+    dev: false
 
   /loader-utils@1.4.2:
     resolution: {integrity: sha1-KalX86Y5c4g+toTxD/09FR/sAaM=, tarball: http://registry.npm.release.ctripcorp.com/loader-utils/download/loader-utils-1.4.2.tgz}
